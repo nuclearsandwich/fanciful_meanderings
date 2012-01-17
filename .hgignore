@@ -1,2 +1,5 @@
 syntax: glob
+fancy-vim
+lang
+.rbx
 *.fyc
