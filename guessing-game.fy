@@ -4,24 +4,24 @@
 remaining-guesses = 6
 Console println: "Welcone to the game!"
 
-random-number = rand(100) + 1
+random-number = 100 random + 1
 
 while: { remaining-guesses > 0 } do: {
   Console println: "You have #{remaining-guesses} guesses remaining."
   guess = Console readln: "Guess a number: " to_i
   Console println: "You guessed #{guess}."
 
-  random-number == guess. if_true: {
-    "You won!" println
+  if: (random-number == guess) then: {
+    Console println: "You won!"
   } else: {
-    random-number > guess. if_true: {
-      "Too low." println
+    if: (random-number > guess) then: {
+      Console println: "Too low."
     } else: {
-      "Too high."println
+      Console println: "Too high."
     }
   }
   remaining-guesses = remaining-guesses - 1
-  Console println: ""
+  Console newline
 }
 
-  "It was #{random-number}!" println
+  Console println: "It was #{random-number}"
